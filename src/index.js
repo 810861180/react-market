@@ -4,6 +4,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 import store from './store'
 import './style/index.scss'
+import 'antd/dist/antd.css';
 
 const Apps = (
     <Provider store={store}>
