@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { Fragment} from 'react';
+import Login from './pages/login'
+import Home from './pages/home'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>this is react app</h1>
-    </div>
+    <Fragment>
+      <HashRouter>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="/" component={Home} />
+          <Redirect to={"home"} />
+        </Switch>
+      </HashRouter>
+    </Fragment>
   )
 }
 
