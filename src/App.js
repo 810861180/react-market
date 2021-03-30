@@ -1,20 +1,17 @@
-import React, { Fragment} from 'react';
-import Login from './pages/login'
-import Home from './pages/home'
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import React, { Fragment } from 'react';
+import {Switch, BrowserRouter} from 'react-router-dom'
+import FrontendAuth from './routes/FrontendAuth' // 路由守卫
+import routerForm from './routes/index' // 路由表
 
 
 function App() {
   return (
     <Fragment>
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/home" component={Home} />
-          <Route path="/" component={Home} />
-          <Redirect to={"home"} />
+          <FrontendAuth routerConfig={routerForm} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </Fragment>
   )
 }
